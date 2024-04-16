@@ -1,0 +1,244 @@
+/* Permite que o CSS entenda caracteres especiais (acentuação, ç, ...) */
+@charset "UTF-8";
+
+/* Importa fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    /* 
+    No CSS toda variável é declarada com --nome_da_variavel e 
+    a inicialização dela é feita com o operador :
+    */
+    /* Representa as cores como variáveis do CSS */
+    --cor0: #ffffff;
+    --cor1: #f7f4ef;
+    --cor2: #d4b398;
+    --cor3: #a97852;
+    --cor4: #324050;
+    --cor5: #1a1919;
+    --cor6: #000000;
+    /* Representa famílias de fontes como variáveis do CSS */
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-principal: 'Open Sans', sans-serif;
+    --fonte-destaque: 'Merriweather', serif;
+    /*
+    A vantagem de usar variáveis para representar cores e 
+    fontes, é que se for necessário trocar as cores e as 
+    fontes do site, basta só alterar a cor da variável que 
+    está em :root {}, evitando assim ter que alterar 
+    individualmente em todos os seletores que usam essas 
+    cores e fontes
+    */
+}
+
+/* Seletor global */
+* {
+    /* Elimina a margin e o padding padrão de todos os elementos do HTML */
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color: #000000
+}
+
+body {
+    background-color: var(--cor0);
+}
+
+body strong {
+    font-weight: bolder;
+    color: var(--cor6);
+}
+
+/*======================================================================================================================*/
+/* Estilizando o cabeçalho */
+/*======================================================================================================================*/
+header {
+    /*background-image: linear-gradient(to bottom, var(--cor3), var(--cor2));*/
+    background-color: var(--cor3);
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--cor5);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    width: 50%;
+}
+
+header > div.top-bar img {
+    width: 12%;
+    padding: 2%;
+}
+
+header > div.top-bar h1 {
+    font-size: 1.5em;
+    font-style: italic;
+    color: var(--cor2);
+    
+}
+
+header nav {
+    width: 50%;                 /* 50% da largura da tela pra caixa da tag <nav></nav> */
+}
+
+header ul {
+    list-style-type: none;      /* Retira a bolinha preta dos itens da lista */
+    display: flex;              /* Coloca todos os itens da lista em uma única linha  */
+    font-size: 1.5em;
+}
+
+header a {
+    color: var(--cor1);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: var(--cor2);
+}
+
+header li {
+    padding-left: 10%;          /* Gera um espaçamento entre os itens da lista */
+}
+
+
+/*======================================================================================================================*/
+/* Estilizando o conteúdo principal */
+/*======================================================================================================================*/
+main {
+    background-color: var(--cor2);
+    padding-bottom: 6%;
+}
+
+#menu {
+    margin: auto;
+    width: 70%;
+    background-color: var(--cor1);
+    padding: 2%;
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.banner-entradas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #a97852;
+
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.banner-entradas > h2 {
+    width: 90%;
+}
+
+.banner-entradas > img {
+    width: 10%;
+    border-radius: 50px;
+}
+
+.entradas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1%;
+
+    transition: background-color 0.5s ease;
+}
+
+.entradas:hover {
+    background-color: rgba(211, 211, 211, 0.705);
+}
+
+.entradas-texto {
+    width: 90%;
+}
+
+.preco {
+    width: 10%;
+    white-space: nowrap;
+}
+
+main h1 {
+    display: block;
+    font-family: var(--fonte-titulo);
+    text-align: center;
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+} 
+
+main h2 {
+    background-color: var(--cor3);
+    font-family: var(--fonte-titulo);
+    text-align: center;
+
+    padding-left: 10%;
+}
+
+main h3 {
+    font-size: 1.2em;
+    padding-left: 1%;
+}
+
+main p {
+    font-size: 1.2em;
+    padding-left: 1%;
+}
+
+
+/*======================================================================================================================*/
+/* Estilizando o rodapé */
+/*======================================================================================================================*/
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--cor5);
+
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+footer nav {
+    display: inline;
+    padding-left: 4%;
+}
+
+footer ul {
+    list-style-type: none;      /* Retira a bolinha preta dos itens da lista */
+    display: flex;              /* Coloca todos os itens da lista em uma única linha  */
+    font-size: 1.5em;
+
+    padding-bottom: 1.5%;
+}
+
+.fab {
+    margin: 0 10px;             /* Isso adiciona uma margem de 10px à esquerda e à direita de cada ícone */
+    color: var(--cor0);
+}
+
+.fab:active {
+    color: var(--cor2);
+}
+
+footer p {
+    text-align: center;
+    font-size: 1em;
+    color: var(--cor1);
+}

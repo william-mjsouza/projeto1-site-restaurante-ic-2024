@@ -6,3 +6,5 @@ O projeto inclui a criação de um site responsivo e interativo, apresentando in
 O objetivo é aplicar os conceitos aprendidos durante o curso e demonstrar habilidades em design web e programação front-end.
 
 O repositório contém o código-fonte, recursos utilizados e possíveis documentações relacionadas ao desenvolvimento do site.
+
+Link do site: https://william-mjsouza.github.io/projeto1-site-restaurante-ic-2024/index.html

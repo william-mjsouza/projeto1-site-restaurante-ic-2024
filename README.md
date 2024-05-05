@@ -1,4 +1,4 @@
-# Projeto 1
+# Projeto 1 - Site de Restaurante
 Desenvolvimento de um site para restaurante utilizando HTML5, CSS3 e JavaScript como parte do Projeto 1 da disciplina de Introdução à Computação da CESAR School no período 2024.1.
 
 O projeto inclui a criação de um site responsivo e interativo, apresentando informações sobre o restaurante, seu menu, horário de funcionamento e outras características relevantes.

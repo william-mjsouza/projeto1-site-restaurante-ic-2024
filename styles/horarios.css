@@ -79,19 +79,27 @@ header {
     width: 50%;
 }
 
-header > div.top-bar img {
-    width: 12%;
+.logo > img {
+    width: 53.62px;
+    height: 29.81;
     padding: 2%;
 }
 
-header > div.top-bar h1 {
+.logo > h1 {
     font-size: 1.5em;
     font-style: italic;
     color: var(--cor2);
+}
+
+button {
+    z-index: 6;
     
+    display: none;
 }
 
 header nav {
+    z-index: 5;
+
     width: 50%;                 /* 50% da largura da tela pra caixa da tag <nav></nav> */
 }
 
@@ -117,6 +125,14 @@ header li {
     padding-left: 10%;          /* Gera um espaçamento entre os itens da lista */
 }
 
+#idioma {
+    width: 40px;
+    height: 21px;
+    margin: 2%;
+
+    cursor: pointer;
+}
+
 
 /*======================================================================================================================*/
 /* Estilizando o conteúdo principal */
@@ -126,7 +142,7 @@ main {
     padding-bottom: 6%;
 }
 
-#horarios {
+.horarios {
     margin: auto;
     width: 70%;
     background-color: var(--cor1);
@@ -200,6 +216,7 @@ main p {
 /*======================================================================================================================*/
 footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -211,7 +228,6 @@ footer {
 
 footer nav {
     display: inline;
-    padding-left: 4%;
 }
 
 footer ul {
@@ -235,4 +251,122 @@ footer p {
     text-align: center;
     font-size: 1em;
     color: var(--cor1);
+    
+    padding-top: 1.5%;
+}
+
+
+/*======================================================================================================================*/
+/* Deixando o site responsivo para Smartphones em pé (dispositivos cujas telas tem largura <= 450px) */
+/*======================================================================================================================*/
+@media (max-width: 450px) {
+    /*======================================================================================================================*/
+    /* Estilizando o cabeçalho */
+    /*======================================================================================================================*/
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+
+        width: 100%;
+    }
+
+    /* ================================================================================================= */
+    button {
+        display: block;
+        width: 20%;
+        /*
+        height: 45%;
+        */
+    
+        border: none;
+        background-color: transparent;
+    }
+    
+    .linha {
+        display: block;
+    
+        width: 66.66%;
+        height: 3.33%;
+    
+        margin: 10% auto;
+    
+        background-color: #ccc;
+    
+        cursor: pointer;
+    }
+    /* ================================================================================================= */
+
+    header nav {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        background-color: var(--cor5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 40vh;
+    }
+
+    .nav-ul {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        width: 100vw;
+        height: 100%;
+    }
+
+    .nav-ul-li {
+        padding-left: 0;
+        padding-block: 5%;
+    }
+
+    /*======================================================================================================================*/
+    /* Estilizando o conteúdo principal */
+    /*======================================================================================================================*/
+    main {
+        padding-bottom: 14%;
+    }
+
+    main h1 {
+        padding-inline: 4%;
+    }
+
+    main h2 {
+        padding-block: 1%;
+    }
+
+    main p {
+        padding-block: 4%;
+        padding-inline: 3%;
+    }
+    
+    .horarios {
+        width: 100%;
+        padding: 0;
+    }
+
+    .horarios-funcionamento {
+        width: 100%;
+    }
+
+    #calendario img {
+        display: none;
+    }
+
+    #calendario li {
+        padding-inline: 3%;
+    }
+
+    /*======================================================================================================================*/
+    /* Estilizando o rodapé */
+    /*======================================================================================================================*/
+    footer p {
+        width: 70%;
+    }
 }

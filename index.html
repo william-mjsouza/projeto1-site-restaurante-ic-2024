@@ -14,43 +14,62 @@
         <div class="top-bar">
             <!-- Logo -->
             <div class="logo">
-                <img src="imagens/logo-cantinho-gourmet.png" alt="Logo do Cantinho Gourmet">
+                <img src="imagens/logo-cantinho-gourmet.png" alt="Ícone estilizado de uma tampa de travessa com um garfo e uma colher cruzados na frente, todos em um tom marrom claro">
                 <h1>Cantinho Gourmet</h1>
             </div>
+
+            <!-- Botão do menu hamburguer -->
+            <button id="btn-menu" onclick="animar()">
+                <!-- Três linhas horizontais do menu hambúrguer -->
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </button>
+
+
             <!-- Menu de navegação -->
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Cardápio</a></li>
-                    <li><a href="horarios.html">Horários</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a id="home" href="index.html">Home</a></li>
+                    <li><a id="cardapio" href="menu.html">Cardápio</a></li>
+                    <li><a id="horarios" href="horarios.html">Horários</a></li>
+                    <li><a id="contato" href="contato.html">Contato</a></li>
                 </ul>
             </nav>
+
+            <!-- Bandeira dos EUA para trocar o idioma -->
+            <img id="idioma" src="imagens/idioma-ingles.jpg" alt="Bandeira dos EUA">
         </div>
         <!-- Banner -->
         <!-- Imagens rotativas destacando pratos  -->
-        <div class="carrossel">
-            <a href="fotos.html">
-                <div class="banner">
-                    <img src="imagens/pratos-principais/Massa-fresca-com-camarões,-tomate-cereja-e-manjericão.jpg" alt="imagem1">
-                    <img src="imagens/entradas/Croquetes-de-queijo-brie-com-geleia-de-pimenta.jpg" alt="imagem2">
-                    <img src="imagens/sobremesas/Crème-brûlée-de-baunilha-bourbon.jpg" alt="imagem3">
+        <div id="banner">
+                <div id="carrossel">
+                    <a href="fotos.html" style="display: flex;">
+                        <img src="imagens/pratos-principais/Massa-fresca-com-camarões,-tomate-cereja-e-manjericão.jpg" alt="imagem1">
+                        <img src="imagens/entradas/Croquetes-de-queijo-brie-com-geleia-de-pimenta.jpg" alt="imagem2">
+                        <img src="imagens/sobremesas/Crème-brûlée-de-baunilha-bourbon.jpg" alt="imagem3">
 
-                    <img src="imagens/pratos-principais/Filé-mignon-ao-molho-de-vinho-tinto-com-batatas-gratinadas.jpg" alt="imagem4">
-                    <img src="imagens/entradas/Bruschetta-de-tomate,-manjericão-e-mozarela-de-búfala.jpg" alt="imagem5">
-                    <img src="imagens/sobremesas/Torta-de-limão-com-merengue-italiano.jpg" alt="imagem6">
+                        <img src="imagens/pratos-principais/Filé-mignon-ao-molho-de-vinho-tinto-com-batatas-gratinadas.jpg" alt="imagem4">
+                        <img src="imagens/entradas/Bruschetta-de-tomate,-manjericão-e-mozarela-de-búfala.jpg" alt="imagem5">
+                        <img src="imagens/sobremesas/Torta-de-limão-com-merengue-italiano.jpg" alt="imagem6">
 
-                    <img src="imagens/pratos-principais/Risoto-de-cogumelos-selvagens-trufado.jpg" alt="imagem7">
-                    <img src="imagens/pratos-principais/Frango-recheado-com-queijo-gruyère-e-espinafre-ao-molho-de-mostarda.jpg" alt="imagem8">
-                    <img src="imagens/sobremesas/Mousse-de-chocolate-belga-com-raspas-de-laranja.jpg" alt="imagem9">
+                        <img src="imagens/pratos-principais/Risoto-de-cogumelos-selvagens-trufado.jpg" alt="imagem7">
+                        <img src="imagens/pratos-principais/Frango-recheado-com-queijo-gruyère-e-espinafre-ao-molho-de-mostarda.jpg" alt="imagem8">
+                        <img src="imagens/sobremesas/Mousse-de-chocolate-belga-com-raspas-de-laranja.jpg" alt="imagem9">
+                    </a>
+                    
+                    <span id="esquerda"><i class="fas fa-chevron-left"></i></span>
+                    <span id="direita"><i class="fas fa-chevron-right"></i></span>
                 </div>
-            </a>
             <!-- Controles para a rolagem manual das imagens do banner -->
-            <div class="controls">
-                <span class="control-left"><i class="fas fa-angle-left"></i></span>     <!-- < -->
-                <span class="control-right"><i class="fas fa-angle-right"></i></span>   <!-- > -->
+            <div id="controle">
+                <span class="controles"></span>
+                <!--
+                <span class="controles"></span> 
+                <span class="controles"></span>
+                 -->
             </div>
-            </div>
+        </div>
     </header>
     <!-- Conteúdo principal do site do restaurante -->
     <main>
@@ -101,7 +120,6 @@
     </main>
     <!-- Rodapé do site do restaurante -->
     <footer>
-        <p>&copy; 2024 Cantinho Gourmet. Todos os direitos reservados.</p>
         <nav>
             <ul>
                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
@@ -110,33 +128,13 @@
                 <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
             </ul>
         </nav>
+        <p>&copy; 2024 Cantinho Gourmet. Todos os direitos reservados.</p>
     </footer>
-
-    <!-- Script para fazer a rolagem das imagens do banner -->
-    <script>
-        let currentImageIndex = 0;
-        let direction = 'right'; // Define a direção inicial
-        const images = document.querySelectorAll('.banner img');
-        const max = images.length;
-
-        function rotateImages(manualDirection) {
-            if (manualDirection) {
-                direction = manualDirection; // Se a rotação foi manual, atualiza a direção
-            }
-            if (direction === 'right') {
-                currentImageIndex = (currentImageIndex + 3) % max;
-            } else if (direction === 'left') {
-                currentImageIndex = (currentImageIndex - 3 + max) % max;
-            }
-            const offset = currentImageIndex * -100;
-            images.forEach(img => img.style.transform = `translateX(${offset}%)`);
-        }
-
-        document.querySelector('.control-left').addEventListener('click', () => rotateImages('left'));
-        document.querySelector('.control-right').addEventListener('click', () => rotateImages('right'));
-
-        // Para rotação automática
-        setInterval(rotateImages, 3000); // intervalo desejado em milissegundos
-    </script>
+    <!-- Script externo para fazer a animação de alternância do menu hambúrguer -->
+    <script src="scripts/toggleMenu.js"></script>
+    <!-- Script externo para fazer a rolagem das imagens do banner -->
+    <script src="scripts/bannerRotation.js"></script>
+    <!-- Script externo para trocar o idioma dos textos do site -->
+    <script src="scripts/changeLenguageIndex.js"></script>
 </body>
 </html>

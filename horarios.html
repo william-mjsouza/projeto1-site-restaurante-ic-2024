@@ -8,29 +8,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Cabeçalho do site do restaurante -->
+    <!-- Cabeçalho da página dos horários de funcionamento do restaurante -->
     <header>
         <div class="top-bar">
             <!-- Logo -->
             <div class="logo">
-                <img src="imagens/logo-cantinho-gourmet.png" alt="Logo do Cantinho Gourmet">
+                <img src="imagens/logo-cantinho-gourmet.png" alt="Ícone estilizado de uma tampa de travessa com um garfo e uma colher cruzados na frente, todos em um tom marrom claro">
                 <h1>Cantinho Gourmet</h1>
             </div>
+
+            <!-- Botão do menu hamburguer -->
+            <button id="btn-menu" onclick="animar()">
+                <!-- Três linhas horizontais do menu hambúrguer -->
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </button>
+
             <!-- Menu de navegação -->
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Cardápio</a></li>
-                    <li><a href="horarios.html">Horários</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a id="home" href="index.html">Home</a></li>
+                    <li><a id="cardapio" href="menu.html">Cardápio</a></li>
+                    <li><a id="horarios" href="horarios.html">Horários</a></li>
+                    <li><a id="contato" href="contato.html">Contato</a></li>
                 </ul>
             </nav>
+
+            <!-- Bandeira dos EUA para trocar o idioma -->
+            <img id="idioma" src="imagens/idioma-ingles.jpg" alt="Bandeira dos EUA">
         </div>
     </header>
     <!-- Conteúdo principal da página dos horários de funcionamento do restaurante -->
     <main>
         <h1>Horário de Funcionamento</h1>
-        <div id="horarios">
+        <div class="horarios">
             <p>O Restaurante Cantinho Gourmet está aberto nos seguintes horários:</p>
             <div id="calendario">
                 <section class="horarios-funcionamento">
@@ -85,9 +97,8 @@
         </div>
         </div>
     </main>
-    <!-- Rodapé do site do restaurante -->
+    <!-- Rodapé da página dos horários de funcionamento do restaurante -->
     <footer id="footer">
-        <p>&copy; 2024 Cantinho Gourmet. Todos os direitos reservados.</p>
         <nav>
             <ul>
                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
@@ -96,6 +107,11 @@
                 <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
             </ul>
         </nav>
+        <p>&copy; 2024 Cantinho Gourmet. Todos os direitos reservados.</p>
     </footer>
+    <!-- Script externo para fazer a animação de alternância do menu hambúrguer -->
+    <script src="scripts/toggleMenu.js"></script>
+    <!-- Script externo para trocar o idioma da página de horários de funcionamento do site do restaurante -->
+    <script src="scripts/changeLenguageHorarios.js"></script>
 </body>
 </html>
